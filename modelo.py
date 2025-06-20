@@ -1,8 +1,11 @@
 import pandas as pd
+import sys
 from pycaret.regression import *
 from pycaret.regression import RegressionExperiment
 
-dataset = pd.read_csv('/home/solmoon/aprendizaje_automatico/IMBD.csv')
+path = sys.argv[1]
+
+dataset = pd.read_csv(path)
 df = pd.DataFrame(dataset)
 
 df = df.dropna(subset=['rating', 'description'])
