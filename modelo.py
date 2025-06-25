@@ -16,6 +16,7 @@ exp = RegressionExperiment()
 
 exp.setup(df, target = 'rating', session_id = 123)
 
-best = create_model('knn')
-final_model = finalize_model(best)
-save_model(final_model, 'knn_model')
+k = create_model('knn')
+tuned_model_knn = tune_model(k)
+final_model = finalize_model(tuned_model_knn)
+save_model(final_model, 'knn_tuned_model')

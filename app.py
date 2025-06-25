@@ -23,19 +23,16 @@ if submit_button:
     stars = [a.strip() for a in actores.split(',')]
     stars_str = ", ".join(stars)
 
-    genres = [g.strip() for g in generos.split(',')]
-    genres_str = ", ".join(genres)
-
     new_data = pd.DataFrame({
     'title': [nombre],
     'year': [anio],
     'duration': [duracion],
-    'genre': [genres_str],
+    'genre': [generos],
     'description': [descripcion],
     'stars': [stars_str]
     })
 
-    model = load_model('knn_model')
+    model = load_model('knn_tuned_model')
     predictions = predict_model(model, data=new_data)
 
     st.write(f"La película {nombre} tiene el siguiente rating {predictions.iat[0,6]}")
