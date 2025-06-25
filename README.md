@@ -17,4 +17,10 @@ Para ejecutar la app se necesita tener el paquete `streamlit` y el modelo ya des
     streamlit run app.py
 ```
 
-Para descargar el modelo se puede ejecutar la notebook o el archivo `modelo.py`. Ambos generan como salida el modelo ya entrenado y listo para utilizar.
+Para descargar el modelo se puede ejecutar la notebook o el archivo `modelo.py`. Ambos generan como salida el modelo ya entrenado y listo para utilizar. Para correr el archivo:
+
+```bash
+    python3 modelo.py ${path_dataset}
+```
+
+El dataset utilizado para entrenar el modelo es https://www.kaggle.com/datasets/payamamanat/imbd-dataset
